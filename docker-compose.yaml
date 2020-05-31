@@ -5,7 +5,7 @@ services:
     environment:
       NODE_ENV: "production"
       TWITTER_ENABLED: "false"
-      PROMETHEUS_URL: "https://london.alexswilliams.co.uk/prometheus"
+      PROMETHEUS_URL: "https://falkenstein.alexswilliams.co.uk/prometheus"
       BASIC_AUTH: "<redacted>"
     ports:
       - "8080:8080"
