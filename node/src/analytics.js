@@ -57,9 +57,9 @@ exports.researchWash = async endTime => {
         // Reset so that if we miss the next start of a wash, we don't mistake future washes for it
         lastStartTime = null
 
-        retObj.durationSeconds = endTime.getTime() - retObj.startTime.getTime()
-        if (retObj.durationSeconds <= 0) return retObj
-        retObj.durationPrintable = toPrintableDuration(retObj.durationSeconds)
+        retObj.durationMillis = endTime.getTime() - retObj.startTime.getTime()
+        if (retObj.durationMillis <= 0) return retObj
+        retObj.durationPrintable = toPrintableDuration(retObj.durationMillis)
 
         const whCounterAtStart = await prometheus.fetchWhCounter(retObj.startTime)
         const whCounterAtEnd = await prometheus.fetchWhCounter(endTime)
