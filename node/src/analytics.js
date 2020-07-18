@@ -2,7 +2,7 @@
 
 const prometheus = require('./prometheus.js')
 
-let costPerkWh = parseFloat(process.env.COST_PER_KWH || "0.1289")
+let costPerkWh = parseFloat(process.env.COST_PER_KWH || "0.141435")
 
 let lastStartTime = null
 
