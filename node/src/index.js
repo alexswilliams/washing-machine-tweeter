@@ -1,7 +1,7 @@
 'use strict'
 
-const express = require('express')
-const alertSorter = require('./alertsorter.js')
+import express from 'express';
+import alertSorter from './alertsorter.js'
 
 const port = process.env.SERVER_PORT || 8080
 let ready = false

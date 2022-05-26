@@ -1,8 +1,5 @@
 'use strict'
-const twitter = require('twitter')
-
-exports.id = "tweeter"
-
+import twitter from 'twitter';
 
 const twitterClient = new twitter({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -13,7 +10,7 @@ const twitterClient = new twitter({
 
 const twitterEnabled = (process.env.TWITTER_ENABLED || "true") == "true"
 
-exports.tweet = (text, res, next) => {
+const tweet = (text, res, next) => {
     if (twitterEnabled && (text != null)) {
         console.log("Tweeting: " + text)
         twitterClient.post('statuses/update', { status: text })
@@ -27,3 +24,7 @@ exports.tweet = (text, res, next) => {
         res.status(200).send('Not sending tweet: ' + text)
     }
 }
+
+export default {
+    tweet
+};

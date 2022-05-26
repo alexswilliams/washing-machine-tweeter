@@ -1,11 +1,9 @@
 'use strict'
 
-const tweeter = require('./tweeter.js')
-const analytics = require('./analytics.js')
+import tweeter from './tweeter.js'
+import analytics from './analytics.js'
 
-exports.id = "alertsorter"
-
-exports.sortAlerts = async (req, res, next) => {
+const sortAlerts = async (req, res, next) => {
     const firingAlerts = req.body.alerts.filter(alert => alert.status == 'firing')
     if (firingAlerts.length == 0) {
         console.log("No alerts firing - aborting here")
@@ -49,3 +47,7 @@ function detailsToText(washDetails) {
 
     return items.join('\n')
 }
+
+export default {
+    sortAlerts
+};

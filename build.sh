@@ -25,6 +25,5 @@ function buildAndPush {
 # buildAndPush "0.1.0" "13.7.0-alpine"
 # buildAndPush "0.1.0" "14.3.0-alpine"
 # buildAndPush "0.1.1" "14.5.0-alpine"
-buildAndPush "0.1.1" "14.8.0-alpine" "latest"
-
-curl -X POST "https://hooks.microbadger.com/images/alexswilliams/washing-machine-tweeter/0dTIBGgIzVqYGlTLLubisXoKaUc="
+# buildAndPush "0.1.1" "14.8.0-alpine"
+buildAndPush "0.2.0" "16.15.0-alpine" "latest"

@@ -1,6 +1,6 @@
 'use strict'
 
-const prometheus = require('./prometheus.js')
+import prometheus from './prometheus.js'
 
 let costPerkWh = parseFloat(process.env.COST_PER_KWH || "0.141435")
 
@@ -39,15 +39,13 @@ function toPrintablePower(whTotal) {
     }
 }
 
-exports.id = "analytics"
-
-exports.registerStart = function (newStartTime) {
+const registerStart = function (newStartTime) {
     lastStartTime = newStartTime
     console.log("[DEBUG] Registering new start time: " + lastStartTime.toISOString())
     return toPrintableTime(lastStartTime)
 }
 
-exports.researchWash = async endTime => {
+const researchWash = async endTime => {
     const retObj = { endTime: endTime, endTimePrintable: toPrintableTime(endTime) }
     if (lastStartTime != null) {
         console.log("[DEBUG] Processing wash between " + lastStartTime.toISOString() + " and " + endTime.toISOString())
@@ -79,3 +77,8 @@ exports.researchWash = async endTime => {
     }
     return retObj
 }
+
+export default {
+    registerStart,
+    researchWash
+};
