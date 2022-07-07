@@ -26,4 +26,5 @@ function buildAndPush {
 # buildAndPush "0.1.0" "14.3.0-alpine"
 # buildAndPush "0.1.1" "14.5.0-alpine"
 # buildAndPush "0.1.1" "14.8.0-alpine"
-buildAndPush "0.2.0" "16.15.0-alpine" "latest"
+# buildAndPush "0.2.0" "16.15.0-alpine" "latest"
+buildAndPush "0.2.1" "16.15.1-alpine" "latest"
